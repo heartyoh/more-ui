@@ -21,6 +21,8 @@ class MoreLet extends LitElement {
           width: 100%;
           height: 100%;
 
+          padding: 5px;
+
           background-color: var(--morelet-background-color, #aaa);
         }
 
