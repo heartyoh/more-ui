@@ -1,6 +1,9 @@
 import { html } from 'lit-html'
-import { store, APPEND_SIDEBAR_RIGHT, APPEND_APP_TOOL, TOOL_POSITION } from '@things-factory/shell'
-import { TOGGLE_MORE_PANEL, ADD_MORENDA } from '@things-factory/more-base'
+import { store } from '@things-factory/shell'
+import { APPEND_ASIDEBAR, APPEND_APP_TOOL, TOOL_POSITION } from '@things-factory/layout-base'
+import { TOGGLE_MORE_PANEL } from '@things-factory/more-base'
+
+import '@material/mwc-icon'
 
 function toggleMore() {
   store.dispatch({
@@ -12,8 +15,8 @@ export default function bootstrap() {
   import('./layouts/more-panel')
 
   store.dispatch({
-    type: APPEND_SIDEBAR_RIGHT,
-    sidebarRight: {
+    type: APPEND_ASIDEBAR,
+    asidebar: {
       hovering: true,
       template: html`
         <more-panel></more-panel>
@@ -24,21 +27,10 @@ export default function bootstrap() {
   store.dispatch({
     type: APPEND_APP_TOOL,
     tool: {
-      // template: html`<more-button></more-button>`,
       template: html`
-        <button @click=${e => toggleMore()}>
-          ...
-        </button>
+        <mwc-icon @click=${e => toggleMore()}>more_horiz</mwc-icon>
       `,
       position: TOOL_POSITION.RIGHT_END
-    }
-  })
-
-  store.dispatch({
-    type: ADD_MORENDA,
-    morenda: {
-      name: 'XXX',
-      template: 'YYY'
     }
   })
 }
