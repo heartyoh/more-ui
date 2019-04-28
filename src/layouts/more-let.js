@@ -41,13 +41,13 @@ class MoreLet extends LitElement {
   }
 
   _onTitleClick() {
-    if (!this.morenda.template) {
-      return
+    if (this.morenda.template) {
+      var target = this.shadowRoot.querySelector('#morelet')
+
+      target.toggleAttribute('opened')
+    } else if (this.morenda.action) {
+      this.morenda.action()
     }
-
-    var target = this.shadowRoot.querySelector('#morelet')
-
-    target.toggleAttribute('opened')
   }
 }
 
