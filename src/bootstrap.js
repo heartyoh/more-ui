@@ -30,7 +30,7 @@ export default function bootstrap() {
       template: html`
         <mwc-icon @click=${e => toggleMore()}>more_horiz</mwc-icon>
       `,
-      position: TOOL_POSITION.RIGHT_END
+      position: TOOL_POSITION.REAR_END
     }
   })
 }
