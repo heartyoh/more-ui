@@ -19,7 +19,7 @@ class MorePanel extends connect(store)(LitElement) {
     return [
       css`
         :host {
-          background-color: var(--more-panel-background-color, gray);
+          background-color: var(--more-panel-background-color, rgba(0, 0, 0, 0.8));
           display: none;
           height: 100%;
 

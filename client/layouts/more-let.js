@@ -13,6 +13,10 @@ class MoreLet extends LitElement {
         :host {
           display: flex;
           flex-direction: column;
+
+          color: var(--morelet-title-color, #fff);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          padding: 3px 0px;
         }
 
         #morelet {
@@ -23,11 +27,15 @@ class MoreLet extends LitElement {
 
           padding: 5px;
 
-          background-color: var(--morelet-background-color, #aaa);
+          background-color: var(--morelet-background-color, #fff);
+          color: var(--morelet-color, #333);
         }
 
         #morelet[opened] {
           display: block;
+        }
+
+        mwc-icon {
         }
       `
     ]
@@ -35,7 +43,10 @@ class MoreLet extends LitElement {
 
   render() {
     return html`
-      <div @click=${e => this._onTitleClick()}>${this.morenda.name}</div>
+      <div @click=${e => this._onTitleClick()}>
+        <mwc-icon>share</mwc-icon>
+        ${this.morenda.name}
+      </div>
       <slot id="morelet">${this.morenda.template ? this.morenda.template : html``}</slot>
     `
   }
