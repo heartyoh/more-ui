@@ -21,6 +21,7 @@ class MorePanel extends connect(store)(LitElement) {
         :host {
           background-color: var(--more-panel-background-color, gray);
           display: none;
+          height: 100%;
 
           min-width: var(--more-panel-min-width, 200px);
         }
