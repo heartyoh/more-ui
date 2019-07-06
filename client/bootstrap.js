@@ -12,7 +12,7 @@ function toggleMore() {
 }
 
 export default function bootstrap() {
-  import('./layouts/more-panel')
+  import('./layout/more-panel')
 
   store.dispatch({
     type: APPEND_ASIDEBAR,
