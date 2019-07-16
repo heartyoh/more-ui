@@ -28,7 +28,7 @@ export default function bootstrap() {
     type: APPEND_APP_TOOL,
     tool: {
       template: html`
-        <mwc-icon @click=${e => toggleMore()}>more_horiz</mwc-icon>
+        <mwc-icon @click=${e => toggleMore()}>more_vert</mwc-icon>
       `,
       position: TOOL_POSITION.REAR_END
     }
