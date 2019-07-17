@@ -3,7 +3,7 @@ import { LitElement, html, css } from 'lit-element'
 import { connect } from 'pwa-helpers/connect-mixin.js'
 
 import { store } from '@things-factory/shell'
-import { TOGGLE_MORE_PANEL } from '@things-factory/more-base'
+import { closeMorePanel } from '@things-factory/more-base'
 
 import './more-let'
 
@@ -47,9 +47,7 @@ class MorePanel extends connect(store)(LitElement) {
     this.setAttribute('tabIndex', -1)
 
     this.addEventListener('focusout', e => {
-      store.dispatch({
-        type: TOGGLE_MORE_PANEL
-      })
+      closeMorePanel()
     })
   }
 

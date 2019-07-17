@@ -1,15 +1,9 @@
 import { html } from 'lit-html'
 import { store } from '@things-factory/shell'
 import { APPEND_ASIDEBAR, APPEND_APP_TOOL, TOOL_POSITION } from '@things-factory/layout-base'
-import { TOGGLE_MORE_PANEL } from '@things-factory/more-base'
+import { openMorePanel } from '@things-factory/more-base'
 
 import '@material/mwc-icon'
-
-function toggleMore() {
-  store.dispatch({
-    type: TOGGLE_MORE_PANEL
-  })
-}
 
 export default function bootstrap() {
   import('./layout/more-panel')
@@ -28,7 +22,7 @@ export default function bootstrap() {
     type: APPEND_APP_TOOL,
     tool: {
       template: html`
-        <mwc-icon @click=${e => toggleMore()}>more_vert</mwc-icon>
+        <mwc-icon @click=${e => openMorePanel()}>more_vert</mwc-icon>
       `,
       position: TOOL_POSITION.REAR_END
     }
