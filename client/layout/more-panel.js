@@ -3,7 +3,6 @@ import { LitElement, html, css } from 'lit-element'
 import { connect } from 'pwa-helpers/connect-mixin.js'
 
 import { store } from '@things-factory/shell'
-import { closeOverlay } from '@things-factory/layout-base'
 
 import './more-let'
 
@@ -34,6 +33,8 @@ class MorePanel extends connect(store)(LitElement) {
   }
 
   render() {
+    this.style.display = this._show ? 'block' : 'none'
+
     return html`
       ${(this._morendas || []).map(
         morenda => html`
@@ -44,17 +45,10 @@ class MorePanel extends connect(store)(LitElement) {
   }
 
   stateChanged(state) {
-    this._morendas = state.more.morendas
-    this._show = state.more.show
-  }
+    var overlay = state.layout.overlays['more']
 
-  updated(changedProps) {
-    if (changedProps.has('_show')) {
-      this.style.display = this._show ? 'block' : 'none'
-      if (this._show) {
-        this.focus()
-      }
-    }
+    this._morendas = state.more.morendas
+    this._show = overlay && overlay.show
   }
 }
 

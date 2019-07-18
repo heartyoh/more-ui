@@ -8,26 +8,25 @@ import {
   toggleOverlay
 } from '@things-factory/layout-base'
 
-import { openMorePanel, closeMorePanel } from '@things-factory/more-base'
-
 import '@material/mwc-icon'
 
 export default function bootstrap() {
   import('./layout/more-panel')
 
+  /* TODO REGISTER_OVERLAY 도 없앨 수 있을 것임. */
   store.dispatch({
     type: REGISTER_OVERLAY,
+    name: 'more',
     overlay: {
-      name: 'more',
-      open: openMorePanel,
-      close: closeMorePanel
+      show: false
     }
   })
 
   store.dispatch({
     type: APPEND_ASIDEBAR,
     asidebar: {
-      hovering: true,
+      name: 'more',
+      hovering: 'next',
       template: html`
         <more-panel></more-panel>
       `
