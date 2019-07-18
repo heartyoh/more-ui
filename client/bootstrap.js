@@ -1,12 +1,7 @@
 import { html } from 'lit-html'
 import { store } from '@things-factory/shell'
-import {
-  APPEND_ASIDEBAR,
-  APPEND_APP_TOOL,
-  REGISTER_OVERLAY,
-  TOOL_POSITION,
-  toggleOverlay
-} from '@things-factory/layout-base'
+import { APPEND_ASIDEBAR, REGISTER_OVERLAY, TOOL_POSITION, toggleOverlay } from '@things-factory/layout-base'
+import { APPEND_APP_TOOL } from '@things-factory/apptool-base'
 
 import '@material/mwc-icon'
 
