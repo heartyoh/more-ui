@@ -13,7 +13,7 @@ export default function bootstrap() {
     name: 'more',
     asidebar: {
       show: false,
-      hovering: 'next',
+      hovering: 'edge',
       template: html`
         <more-panel></more-panel>
       `
