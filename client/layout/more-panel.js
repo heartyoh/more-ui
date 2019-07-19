@@ -9,8 +9,7 @@ import './more-let'
 class MorePanel extends connect(store)(LitElement) {
   static get properties() {
     return {
-      _morendas: Array,
-      _show: Boolean
+      _morendas: Array
     }
   }
 
@@ -19,7 +18,6 @@ class MorePanel extends connect(store)(LitElement) {
       css`
         :host {
           background-color: var(--more-panel-background-color);
-          display: none;
           height: 100%;
 
           min-width: var(--more-panel-min-width);
@@ -33,8 +31,6 @@ class MorePanel extends connect(store)(LitElement) {
   }
 
   render() {
-    this.style.display = this._show ? 'block' : 'none'
-
     return html`
       ${(this._morendas || []).map(
         morenda => html`
@@ -45,10 +41,7 @@ class MorePanel extends connect(store)(LitElement) {
   }
 
   stateChanged(state) {
-    var overlay = state.layout.overlays['more']
-
     this._morendas = state.more.morendas
-    this._show = overlay && overlay.show
   }
 }
 

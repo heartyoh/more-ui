@@ -1,6 +1,6 @@
 import { html } from 'lit-html'
 import { store } from '@things-factory/shell'
-import { APPEND_ASIDEBAR, REGISTER_OVERLAY, TOOL_POSITION, toggleOverlay } from '@things-factory/layout-base'
+import { APPEND_ASIDEBAR, TOOL_POSITION, toggleOverlay } from '@things-factory/layout-base'
 import { APPEND_APP_TOOL } from '@things-factory/apptool-base'
 
 import '@material/mwc-icon'
@@ -8,19 +8,11 @@ import '@material/mwc-icon'
 export default function bootstrap() {
   import('./layout/more-panel')
 
-  /* TODO REGISTER_OVERLAY 도 없앨 수 있을 것임. */
-  store.dispatch({
-    type: REGISTER_OVERLAY,
-    name: 'more',
-    overlay: {
-      show: false
-    }
-  })
-
   store.dispatch({
     type: APPEND_ASIDEBAR,
+    name: 'more',
     asidebar: {
-      name: 'more',
+      show: false,
       hovering: 'next',
       template: html`
         <more-panel></more-panel>
