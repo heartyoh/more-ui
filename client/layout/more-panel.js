@@ -17,9 +17,10 @@ class MorePanel extends connect(store)(LitElement) {
     return [
       css`
         :host {
+          display: block;
           background-color: var(--more-panel-background-color);
-          height: 100%;
 
+          height: 100%;
           min-width: var(--more-panel-min-width);
         }
 
