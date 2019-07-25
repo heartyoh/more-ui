@@ -24,7 +24,13 @@ export default function bootstrap() {
     type: APPEND_APP_TOOL,
     tool: {
       template: html`
-        <mwc-icon @click=${e => toggleOverlay('more')}>more_vert</mwc-icon>
+        <mwc-icon
+          @click=${e =>
+            toggleOverlay('more', {
+              backdrop: true
+            })}
+          >more_vert</mwc-icon
+        >
       `,
       position: TOOL_POSITION.REAR_END
     }
