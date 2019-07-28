@@ -5,9 +5,9 @@ import { APPEND_APP_TOOL } from '@things-factory/apptool-base'
 
 import '@material/mwc-icon'
 
-export default function bootstrap() {
-  import('./layout/more-panel')
+import './layout/more-panel'
 
+export default function bootstrap() {
   appendViewpart({
     name: 'more',
     viewpart: {
