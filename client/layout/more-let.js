@@ -13,7 +13,7 @@ class MoreLet extends LitElement {
         :host {
           display: flex;
           flex-direction: column;
-          padding: 7px 5px 5px 7px;
+          padding: 7px 5px 5px 10px;
 
           min-width: var(--morelet-min-width);
           color: var(--morelet-title-color);
@@ -38,10 +38,20 @@ class MoreLet extends LitElement {
         #morelet[opened] {
           display: block;
         }
-
+        [header] {
+          opacity: 0.8;
+        }
+        [header]:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
         [icon] {
-          --mdc-icon-size: 1em;
+          --mdc-icon-size: 1.2em;
           vertical-align: middle;
+          color: #82d5e8;
+        }
+        [title] {
+          text-transform: capitalize;
         }
       `
     ]

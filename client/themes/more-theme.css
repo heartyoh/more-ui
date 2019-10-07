@@ -4,8 +4,8 @@ body {
 
   --morelet-min-width: 200px;
   --morelet-title-color: #fff;
-  --morelet-title-font: normal 1em/1em var(--theme-font);
-  --morelet-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  --morelet-title-font: normal 14px var(--theme-font);
+  --morelet-border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   --morelet-focus-border-top: 3px solid var(--primary-color);
   --morelet-background-color: #fff;
   --morelet-color: var(--secondary-color);
