@@ -1,8 +1,7 @@
 import { LitElement, html, css } from 'lit-element'
-
 import { connect } from 'pwa-helpers/connect-mixin.js'
-
 import { store } from '@things-factory/shell'
+import { TOOL_POSITION } from '@things-factory/layout-base'
 
 import './more-let'
 
@@ -32,8 +31,18 @@ class MorePanel extends connect(store)(LitElement) {
   }
 
   render() {
+    var morendas = this._morendas
+
+    morendas = [
+      ...morendas.filter(morenda => morenda.position == TOOL_POSITION.FRONT_END),
+      ...morendas.filter(morenda => morenda.position == TOOL_POSITION.FRONT),
+      ...morendas.filter(morenda => !morenda.position || morenda.position == TOOL_POSITION.CENTER),
+      ...morendas.filter(morenda => morenda.position == TOOL_POSITION.REAR),
+      ...morendas.filter(morenda => morenda.position == TOOL_POSITION.REAR_END)
+    ]
+
     return html`
-      ${(this._morendas || []).map(
+      ${(morendas || []).map(
         morenda => html`
           <more-let .morenda=${morenda}></more-let>
         `
